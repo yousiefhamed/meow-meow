@@ -6,6 +6,8 @@ Welcome to the Meow Cats Project! This project is a fun and lighthearted explora
 
 In this project, you'll find the following cat components:
 
+<img src="assets/image.png">
+
 1. **Om Hamada** - CEO of Meow Meow 🎩
 2. **Fat Cat - Whiskers**: The Cuddly Lounger 🐱
 3. **Gamer Cat - Pixel**: The Virtual Realm Dominator 🎮
