@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEOW CATS</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin: 20px;
+        color: white;
+        font-size: 50px;
+      }
+
+      img {
+        max-width: 250px;
+      }
+
+      .card__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        background-color: rgb(255, 114, 63);
+        margin: 20px auto;
+        border-radius: 10px;
+        overflow: hidden;
+        max-width: 90%;
+        width: 1000px;
+        box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 20px;
+          padding-inline: 20px;
+
+          h2 {
+            color: white;
+            position: relative;
+            font-weight: 900;
+            font-style: normal;
+
+            &::after {
+              content: "";
+              width: 100%;
+              height: 2px;
+              background-color: white;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              margin-top: 10px;
+            }
+          }
+
+          p {
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+            line-height: 25px;
+          }
+
+          button {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s;
+
+            a {
+              color: black;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 900;
+            }
+            &:hover {
+              background-color: black;
+              animation: scaleBtn 0.5s ease-in-out;
+            }
+            &:hover a {
+              color: white;
+            }
+          }
+        }
+
+        @media (max-width: 850px) {
+          flex-direction: column;
+          width: 50%;
+
+          img {
+            width: 100%;
+            max-width: none;
+          }
+          div {
+            margin-bottom: 20px;
+          }
+        }
+
+        @media (max-width: 650px) {
+          width: 100%;
+        }
+      }
+
+      @keyframes scaleBtn {
+        50% {
+          transform: scale(1.3);
+        }
+      }
+
+      footer {
+        text-align: center;
+        color: white;
+        padding-block: 20px;
+
+        .developer {
+          color: orangered;
+          background-color: white;
+          border-radius: 5px;
+          padding: 2px 5px;
+          text-decoration: none;
+          margin-inline-start: 2px;
+        }
+      }
+    </style>
+
+    <script>
+      const catsData = [
+        {
+          name: "Om Hamada",
+          desc: "Meet om hamada, when she waits for hamada to try the 200L.E t-shirt after paying only 5L.E 😹",
+          img: "om-hamada",
+          button: {
+            text: "Join Om Hamada's Marketing Course!",
+            link: "",
+          },
+        },
+        {
+          name: "Fat Cat - Whiskers: The Cuddly Lounger",
+          desc: "Meet Whiskers, the cuddly kitty who loves lounging in sunbeams and snacking on treats.",
+          img: "fat",
+          button: {
+            text: "Join Whiskers' Nap Club!",
+            link: "",
+          },
+        },
+        {
+          name: "Gamer Cat - Pixel: The Virtual Realm Dominator",
+          desc: "Pixel is the gaming guru, dominating virtual realms with lightning-fast reflexes and keen eyes.",
+          img: "gamer",
+          button: {
+            text: "Play with Pixel!",
+            link: "",
+          },
+        },
+        {
+          name: "Healthcare Cat - Nurse Paws: The Healing Companion",
+          desc: "Nurse Paws spreads love and healing with gentle purrs and comforting cuddles.",
+          img: "healthcare",
+          button: {
+            text: "Get a Pawsitive Boost!",
+            link: "",
+          },
+        },
+        {
+          name: "Karate Cat - Sensei Claw: The Martial Arts Master",
+          desc: "Sensei Claw teaches martial arts with grace and strength, embodying the art of karate.",
+          img: "karate",
+          button: {
+            text: "Join Sensei Claw's Dojo!",
+            link: "",
+          },
+        },
+        {
+          name: "Makeup Artist Cat - Glamourpuss: The Style Transformer",
+          desc: "Glamourpuss transforms the ordinary into extraordinary with style and sophistication.",
+          img: "makeup-artist",
+          button: {
+            text: "Get Glam with Glamourpuss!",
+            link: "",
+          },
+        },
+        {
+          name: "Police Cat - Officer Whisker: The Determined Protector",
+          desc: "Officer Whisker patrols with determination, keeping the community safe with sharp instincts.",
+          img: "police",
+          button: {
+            text: "Support Officer Whisker's Patrol!",
+            link: "",
+          },
+        },
+        {
+          name: "Programmer Cat - Code Kitty: The Coding Connoisseur",
+          desc: "Code Kitty navigates code with finesse, staying one step ahead in technology.",
+          img: "programmer",
+          button: {
+            text: "Hack with Code Kitty!",
+            link: "",
+          },
+        },
+        {
+          name: "Shower Cat - Aqua Purr: The Bath-Time Adventurer",
+          desc: "Aqua Purr makes bath time a delightful adventure with her water-loving nature.",
+          img: "shower",
+          button: {
+            text: "Splash with Aqua Purr!",
+            link: "",
+          },
+        },
+        {
+          name: "Singer Cat - Melody: The Soulful Songbird",
+          desc: "Melody captivates with sweet tunes and soulful serenades, proving music is the language of the heart.",
+          img: "singer",
+          button: {
+            text: "Listen to Melody's Serenade!",
+            link: "",
+          },
+        },
+        {
+          name: "Student Cat - Bookworm: The Curious Scholar",
+          desc: "Bookworm tackles every subject with enthusiasm, proving education unlocks endless possibilities.",
+          img: "student",
+          button: {
+            text: "Study with Bookworm!",
+            link: "",
+          },
+        },
+        {
+          name: "Swimmer Cat - Aqua Whisker: The Graceful Explorer",
+          desc: "Aqua Whisker glides through the water with grace, exploring the ocean depths with boundless curiosity.",
+          img: "swimmer",
+          button: {
+            text: "Dive with Aqua Whisker!",
+            link: "",
+          },
+        },
+      ];
+    </script>
+  </head>
+  <body>
+    <h1>Meow Meow</h1>
+    <main></main>
+    <footer>
+      <p>
+        &copy; Developed With 💛 By
+        <a class="developer" href="https://youssef-hamed.vercel.app"
+          >Youssef Hamed</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      document.querySelector("main").innerHTML = catsData.map(
+        ({ name, desc, img, button }) =>
+          `<div class="card__container">
+          <img src="assets/${img}.jpeg" alt="${name}" />
+          <div>
+            <h2>${name}</h2>
+            <p>${desc}</p>
+            <button><a href="${button.link}">${button.text}</a></button>
+          </div>
+        </div>`
+      );
+    </script>
+    <script>
+      const body = document.querySelector("body");
+      const cardContainer = document.querySelectorAll(".card__container");
+
+      let color = "";
+
+      let shuffleNumbers = () => {
+        const randomNum = () => Math.floor(Math.random() * 255) + 1;
+        color += `rgba(${randomNum()}, ${randomNum()}, ${randomNum()}`;
+      };
+
+      shuffleNumbers();
+
+      body.style.backgroundColor = `${color},1)`;
+      cardContainer.forEach(
+        (x) => (x.style.backgroundColor = `rgba(0,0,0,0.5)`)
+      );
+    </script>
+  </body>
+</html>
